@@ -4,7 +4,8 @@ from collections import Counter
 import sys
 sys.path.append("../")
 
-class TorchVocab(object):
+
+class TorchVocab:
     """Defines a vocabulary object that will be used to numericalize a field.
     Attributes:
         freqs: A collections.Counter object holding the frequencies of tokens
@@ -166,4 +167,3 @@ class WordVocab(Vocab):
     def load_vocab(vocab_path: str) -> 'WordVocab':
         with open(vocab_path, "rb") as f:
             return pickle.load(f)
-

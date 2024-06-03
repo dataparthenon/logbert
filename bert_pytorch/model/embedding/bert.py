@@ -5,6 +5,7 @@ from .position import PositionalEmbedding
 from .segment import SegmentEmbedding
 from .time_embed import TimeEmbedding
 
+
 class BERTEmbedding(nn.Module):
     """
     BERT Embedding which is consisted with under features

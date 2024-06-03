@@ -87,26 +87,10 @@ def generate_train_valid(data_path, window_size=20, adaptive_window=True,
         logkey_seq_pairs += logkeys
         time_seq_pairs += times
 
-    logkey_seq_pairs = np.array(logkey_seq_pairs)
-    time_seq_pairs = np.array(time_seq_pairs)
-
     logkey_trainset, logkey_validset, time_trainset, time_validset = train_test_split(logkey_seq_pairs,
                                                                                       time_seq_pairs,
                                                                                       test_size=test_size,
                                                                                       random_state=1234)
-
-    # sort seq_pairs by seq len
-    train_len = list(map(len, logkey_trainset))
-    valid_len = list(map(len, logkey_validset))
-
-    train_sort_index = np.argsort(-1 * np.array(train_len))
-    valid_sort_index = np.argsort(-1 * np.array(valid_len))
-
-    logkey_trainset = logkey_trainset[train_sort_index]
-    logkey_validset = logkey_validset[valid_sort_index]
-
-    time_trainset = time_trainset[train_sort_index]
-    time_validset = time_validset[valid_sort_index]
 
     print("="*40)
     print("Num of train seqs", len(logkey_trainset))
