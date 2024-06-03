@@ -15,7 +15,7 @@ PAD = 0
 UNK = 1
 START = 2
 
-data_dir = os.path.expanduser("~/.dataset/bgl")
+data_dir = os.path.expanduser("")
 output_dir = "../output/bgl/"
 log_file = "BGL.log"
 
